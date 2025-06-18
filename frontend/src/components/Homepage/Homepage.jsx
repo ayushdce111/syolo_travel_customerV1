@@ -1,14 +1,17 @@
 import React from 'react'
-import AllPackages from './AllPackages'
+import AdminPackages from './AdminPackages'
 import Banner from './Banner'
 import EnquiryForm from "./EnquiryForm";
+import AgentPackages from "./AgentPackages";
 
 const Homepage = () => {
   return (
     <>
-<EnquiryForm/>
+
         <Banner/>
-        <AllPackages/>
+        <AdminPackages/>
+        <EnquiryForm/>
+        <AgentPackages/>
         
     </>
   )

@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const AllTravelPackagesSchema = new Schema({
-    title:{
+const AgentTravelPackagesSchema = new Schema({
+   title:{
         type:String,
         required:true,
         unique: true
@@ -42,9 +42,13 @@ const AllTravelPackagesSchema = new Schema({
     submittedAt: {
     type: Date,
     default: Date.now,
+  },
+  package_status:{
+        type:String,
+        required:true,
   }
 })
 
-const AllTravelPackagesModel = mongoose.model("travelpackage",AllTravelPackagesSchema);
+const AgentTravelPackagesModel = mongoose.model("agenttravelpackages",AgentTravelPackagesSchema);
 
-module.exports = AllTravelPackagesModel;
+module.exports = AgentTravelPackagesModel;

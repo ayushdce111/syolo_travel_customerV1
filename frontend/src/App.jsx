@@ -16,7 +16,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import Topheader from './components/TopHeader';
 import Header from './components/Header';
 import {ToastContainer} from "react-toastify";
-import AllPackages from './components/Homepage/AllPackages';
+import AdminPackages from './components/Homepage/AdminPackages';
 // import { handleError,handleSuccess } from '../Utils';
 
 function App() {

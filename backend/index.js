@@ -7,7 +7,7 @@ const cors = require("cors");
 const AuthRouter = require("./routes/AuthRouter");
 const ProductRouter = require("./routes/ProductRouter");
 const Packages = require("./routes/Packages");
-const Enquiry = require("./routes/Enquiry")
+const Enquiry = require("./routes/Enquiry");
 
 const PORT = process.env.PORT || 8000;
 
@@ -17,7 +17,7 @@ app.use(cors());
 app.use("/auth",AuthRouter);
 app.use("/api/",Packages);
 app.use("/customer/",Enquiry);
-app.use("/products",ProductRouter);
+// app.use("/products",ProductRouter);
 
 app.get("/",(req,res)=>{
     console.log("hi");

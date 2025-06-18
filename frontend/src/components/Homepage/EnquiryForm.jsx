@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import API from '../../apiConfig';
+import {ToastContainer} from "react-toastify";
+import { handleError,handleSuccess } from '../Utils';
 
 const EnquiryForm = () => {
   const [formData, setFormData] = useState({
@@ -70,6 +72,7 @@ const EnquiryForm = () => {
           const res = await API.post("customer/enquirydata",formData);
           const resJson = await res.data;
           console.log(resJson,"<----------------------------responsone enquiry");
+          handleSuccess(resJson.message);
           // console.log(resJson,"<----------------resposne LOCAL");
         //   const {message,success,error,msg} =resJson;
           
