@@ -3,15 +3,17 @@ import AdminPackages from './AdminPackages'
 import Banner from './Banner'
 import EnquiryForm from "./EnquiryForm";
 import AgentPackages from "./AgentPackages";
+import AllPackages from './AllPackages';
 
 const Homepage = () => {
   return (
     <>
 
         <Banner/>
-        <AdminPackages/>
+        {/* <AdminPackages/> */}
         <EnquiryForm/>
-        <AgentPackages/>
+        {/* <AgentPackages/> */}
+        <AllPackages/>
         
     </>
   )

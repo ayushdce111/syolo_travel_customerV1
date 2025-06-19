@@ -3,7 +3,7 @@ import API from '../../apiConfig';
 import axios from "axios"
 import { useState } from 'react';
 
-function AgentPackages() {
+function AgentPackages({setAgentPackagescopy}) {
     const [AgentPackages,setAgentPackages]=useState([]);
     
 
@@ -14,7 +14,8 @@ function AgentPackages() {
                 const data = await axios.get('http://localhost:5000/api/getAgentPackages');
               
         setAgentPackages(data.data)
-    console.log(data.data,"<----------top data");
+        setAgentPackagescopy(data.data)
+    // console.log(data.data,"<----------top data");
             } 
             fetchAgentPackages();
         }catch(error){
@@ -25,10 +26,12 @@ function AgentPackages() {
      AgentPackages==""? <p>Loading</p> : console.log(AgentPackages,"<=-==========Agent Packages");
   return (
     <>
+    <div className='flex gap-6'>
        {
         AgentPackages?.map((AgentPackagsdata,index)=>{
             return(
                 <>
+                <div>
                         id- {AgentPackagsdata._id}
                         <br/>
                        title- {AgentPackagsdata.title}<br/>
@@ -40,10 +43,12 @@ function AgentPackages() {
                         inclusions - {AgentPackagsdata.inclusions}<br/>
                         availability - {AgentPackagsdata.availability}
                         <hr/>
+                        </div>
                 </>
             )
         })
        }
+       </div>
     </>
   )
 }
