@@ -23,10 +23,12 @@ function AgentPackages({setAgentPackagescopy}) {
         }
     },[]);
     
-     AgentPackages==""? <p>Loading</p> : console.log(AgentPackages,"<=-==========Agent Packages");
+     AgentPackages==""? <p>Loading</p> : 
+    //  console.log(AgentPackages,"<=-==========Agent Packages")
+    "";
   return (
     <>
-    <div className='flex gap-6'>
+    {/* <div className='flex gap-6'>
        {
         AgentPackages?.map((AgentPackagsdata,index)=>{
             return(
@@ -48,7 +50,7 @@ function AgentPackages({setAgentPackagescopy}) {
             )
         })
        }
-       </div>
+       </div> */}
     </>
   )
 }

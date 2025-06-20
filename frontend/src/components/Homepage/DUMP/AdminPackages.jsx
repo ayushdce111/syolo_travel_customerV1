@@ -24,7 +24,9 @@ function AdminPackages({setAdminPackagescopy}) {
         }
     },[]);
     
-     AdminPackages==""? <p>Loading</p> : console.log(AdminPackages,"<=-==========Admin Packages");
+     AdminPackages==""? <p>Loading</p> :
+    //   console.log(AdminPackages,"<=-==========Admin Packages")
+    "";
   return (
     <>
     <div className='grid grid-cols-1 md:grid-cols-4 gap-2 '>
@@ -32,7 +34,7 @@ function AdminPackages({setAdminPackagescopy}) {
         AdminPackages?.slice(0, 4).map((AdminPackagsdata,index)=>{
             return(
                 <>
-                <div className=' p-3'>
+                {/* <div className=' p-3'>
                     <div className='h-[50vh] relative  border shadow-lg rounded-sm'>
                         <img src='#' className='w-full h-full rounded-sm'/>
                         <div className='absolute top-1 right-1 p-1 rounded-sm bg-amber-400'>
@@ -42,9 +44,9 @@ function AdminPackages({setAdminPackagescopy}) {
                             destinations- {AdminPackagsdata.destinations}<br/>
                         </div>
                     </div>
-<div className=' pt-2'>
+<div className=' pt-2'> */}
                         {/* id- {AdminPackagsdata._id} */}
-                       <div className=''>
+                       {/* <div className=''>
                        title- {AdminPackagsdata.title}
                        </div>
                        <div className=''>
@@ -54,7 +56,7 @@ function AdminPackages({setAdminPackagescopy}) {
                             Rs. {AdminPackagsdata.prices}
                         </div>
                         {AdminPackagsdata.travelcategory}
-                        </div>
+                        </div> */}
                     
                        {/* description- {AdminPackagsdata.description}<br/>
                        
@@ -62,7 +64,7 @@ function AdminPackages({setAdminPackagescopy}) {
                         inclusions - {AdminPackagsdata.inclusions}<br/>
                         availability - {AdminPackagsdata.availability}
                         <hr/> */}
-                        </div>
+                        {/* </div> */}
                         
                 </>
             )
