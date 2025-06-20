@@ -92,6 +92,7 @@ const EnquiryForm = () => {
           }catch(error){
             console.log(error,"<----------signup error")
             error.status===400 && handleError(error.response.data.error.details[0].message);
+            error.status===500 && handleError(error.response.data.error.errorResponse.errmsg);
             
           }
       setFormData({ name: '', phone: '', message: '' });

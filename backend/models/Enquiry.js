@@ -5,7 +5,6 @@ const EnquirySchema = new Schema({
     name:{
         type:String,
         required:true,
-        unique: true
     },
     phone: {
         type:String,

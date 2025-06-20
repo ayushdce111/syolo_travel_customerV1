@@ -12,9 +12,9 @@ const Enquiry = async (req,res)=>{
         // user.password = await bcrypt.hash(password, 10);
         await EnquiryNew.save();
         res.status(201).json({ success: true, message: "Enquiry Submitted" });
-    } catch (error) {
-        // console.error(error);
-        res.status(500).json({ message: 'Internal Server Error', success: false });
+    } catch(error) {
+        console.log(error.code);
+        res.status(500).json({ message: 'Internal Server Error', success: false,error });
     }
 }
 
