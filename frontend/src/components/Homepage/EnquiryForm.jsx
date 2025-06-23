@@ -7,12 +7,18 @@ const EnquiryForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    message: ''
+    travelernumber:'',
+    leavingFrom:"",
+    goingTo:"",
+    additionalDetails: ''
   });
   const [errors, setErrors] = useState({
     name: '',
     phone: '',
-    message: ''
+    travelernumber:'',
+    leavingFrom:"",
+    goingTo:"",
+    additionalDetails: ''
   });
 
   const validateName = (name) => {
@@ -31,9 +37,30 @@ const EnquiryForm = () => {
     return '';
   };
 
-  const validateMessage = (message) => {
-    if (message.length < 10) {
-      return 'Message must be at least 10 characters.';
+  const validateadditionalDetails = (additionalDetails) => {
+    if (additionalDetails.length < 10) {
+      return 'Additional Details must be at least 10 characters.';
+    }
+    return '';
+  };
+  const validatetravelernumber = (travelernumber) => {
+    console.log(isNaN(travelernumber),"travelernumbertravelernumber  -----",travelernumber);
+    if (isNaN(travelernumber) || travelernumber < 1) {
+      return 'traveler number must be at least 1.';
+    }
+    return '';
+  };
+  const validateleavingFrom = (leavingFrom) => {
+    const leavingFromRegex = /^[A-Za-z\s]{2,}$/;
+    if (!leavingFromRegex.test(leavingFrom)) {
+      return 'Must be at least 2 characters and contain only letters.';
+    }
+    return '';
+  };
+   const validategoingTo = (goingTo) => {
+    const goingToRegex = /^[A-Za-z\s]{2,}$/;
+    if (!goingToRegex.test(goingTo) ) {
+      return 'Must be at least 2 characters and contain only letters.';
     }
     return '';
   };
@@ -47,8 +74,14 @@ const EnquiryForm = () => {
       setErrors({ ...errors, name: validateName(value) });
     } else if (name === 'phone') {
       setErrors({ ...errors, phone: validatePhone(value) });
-    } else if (name === 'message') {
-      setErrors({ ...errors, message: validateMessage(value) });
+    } else if (name === 'additionalDetails') {
+      setErrors({ ...errors, additionalDetails: validateadditionalDetails(value) });
+    } else if (name === 'travelernumber') {
+      setErrors({ ...errors, travelernumber: validatetravelernumber(value) });
+    }else if (name === 'leavingFrom') {
+      setErrors({ ...errors, leavingFrom: validateleavingFrom(value) });
+    }else if (name === 'goingTo') {
+      setErrors({ ...errors, goingTo: validategoingTo(value) });
     }
   };
 
@@ -57,17 +90,24 @@ const EnquiryForm = () => {
     
     const nameError = validateName(formData.name);
     const phoneError = validatePhone(formData.phone);
-    const messageError = validateMessage(formData.message);
+    const additionalDetailsError = validateadditionalDetails(formData.additionalDetails);
+    const travelernumberError = validatetravelernumber(formData.travelernumber);
+    const leavingFromError = validateleavingFrom(formData.leavingFrom);
+    const goingToError = validategoingTo(formData.goingTo);
+    
 
     setErrors({
       name: nameError,
       phone: phoneError,
-      message: messageError
+      additionalDetails: additionalDetailsError,
+      travelernumber: travelernumberError,
+      leavingFrom: leavingFromError,
+      goingTo: goingToError
     });
 
-    if (!nameError && !phoneError && !messageError) {
+    if (!nameError && !phoneError && !additionalDetailsError && !travelernumberError && !leavingFromError && !goingToError) {
       // Simulate form submission (replace with actual backend call)
-    //   alert(`Form submitted successfully!\nName: ${formData.name}\nPhone: ${formData.phone}\nMessage: ${formData.message}`);
+    //   alert(`Form submitted successfully!\nName: ${formData.name}\nPhone: ${formData.phone}\additionalDetails: ${formData.additionalDetails}`);
     try{
           const res = await API.post("customer/enquirydata",formData);
           const resJson = await res.data;
@@ -95,8 +135,8 @@ const EnquiryForm = () => {
             error.status===500 && handleError(error.response.data.error.errorResponse.errmsg);
             
           }
-      setFormData({ name: '', phone: '', message: '' });
-      setErrors({ name: '', phone: '', message: '' });
+      setFormData({ name: '', phone: '', additionalDetails: '',travelernumber:"", leavingFrom:"",goingTo:"" });
+      setErrors({ name: '', phone: '', additionalDetails: '',travelernumber:"",leavingFrom:"",goingTo:"" });
     }
   };
 
@@ -136,21 +176,65 @@ const EnquiryForm = () => {
             />
             {errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone}</p>}
           </div>
-
-          {/* Message Field */}
+          <div className='flex gap-3'>
+              <div>
+                  <label htmlFor="travelernumber" className="block text-sm font-medium text-gray-700">Number Of Traveler</label>
+                  <input
+                    type="text"
+                    id="travelernumber"
+                    name="travelernumber"
+                    value={formData.travelernumber}
+                    onChange={handleInputChange}
+                    required
+                    className={`mt-1 block w-full px-3 py-2 border ${errors.travelernumber ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
+                    placeholder="Enter number of travelers"
+                  />
+                  {errors.travelernumber && <p className="mt-1 text-sm text-red-600">{errors.travelernumber}</p>}
+              </div>
+              <div>
+                  <label htmlFor="leavingFrom" className="block text-sm font-medium text-gray-700">Leaving From</label>
+                  <input
+                    type="text"
+                    id="leavingFrom"
+                    name="leavingFrom"
+                    value={formData.leavingFrom}
+                    onChange={handleInputChange}
+                    required
+                    className={`mt-1 block w-full px-3 py-2 border ${errors.leavingFrom ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
+                    placeholder="Enter location leaving From"
+                  />
+                  {errors.leavingFrom && <p className="mt-1 text-sm text-red-600">{errors.leavingFrom}</p>}
+              </div>
+              <div>
+                  <label htmlFor="goingTo" className="block text-sm font-medium text-gray-700">Going To</label>
+                  <input
+                    type="text"
+                    id="goingTo"
+                    name="goingTo"
+                    value={formData.goingTo}
+                    onChange={handleInputChange}
+                    required
+                    className={`mt-1 block w-full px-3 py-2 border ${errors.goingTo ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
+                    placeholder="Enter location leaving From"
+                  />
+                  {errors.goingTo && <p className="mt-1 text-sm text-red-600">{errors.goingTo}</p>}
+              </div>
+          </div>
+{/* {console.log(errors.travelernumber,"errors.travelernumbererrors.travelernumber")} */}
+          {/* additionalDetails Field */}
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
+            <label htmlFor="additionalDetails" className="block text-sm font-medium text-gray-700">Additional Details</label>
             <textarea
-              id="message"
-              name="message"
+              id="additionalDetails"
+              name="additionalDetails"
               rows="4"
-              value={formData.message}
+              value={formData.additionalDetails}
               onChange={handleInputChange}
               required
-              className={`mt-1 block w-full px-3 py-2 border ${errors.message ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
-              placeholder="Enter your message"
+              className={`mt-1 block w-full px-3 py-2 border ${errors.additionalDetails ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
+              placeholder="Mention Additional Details "
             ></textarea>
-            {errors.message && <p className="mt-1 text-sm text-red-600">{errors.message}</p>}
+            {errors.additionalDetails && <p className="mt-1 text-sm text-red-600">{errors.additionalDetails}</p>}
           </div>
 
           {/* Submit Button */}
