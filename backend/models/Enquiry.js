@@ -26,6 +26,10 @@ const EnquirySchema = new Schema({
         type:String,
         required:true,
     },
+    agentassigned:{
+        type:String,
+        required:true,
+    },
     submittedAt: {
     type: Date,
     default: Date.now,

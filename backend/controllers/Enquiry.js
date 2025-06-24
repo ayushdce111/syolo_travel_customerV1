@@ -9,7 +9,8 @@ const Enquiry = async (req,res)=>{
         // if (existingUser) {
         //     return res.status(409).json({ success: false, message: 'Email already exists' });
         // }
-        const EnquiryNew = new EnquiryModel({ name, phone, travelernumber,leavingFrom,goingTo,additionalDetails });
+        const agentassigned = "none";
+        const EnquiryNew = new EnquiryModel({ name, phone, travelernumber,leavingFrom,goingTo,additionalDetails,agentassigned });
         // user.password = await bcrypt.hash(password, 10);
         await EnquiryNew.save();
         res.status(201).json({ success: true, message: "Enquiry Submitted" });
