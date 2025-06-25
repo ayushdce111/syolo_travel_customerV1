@@ -10,7 +10,8 @@ const Enquiry = async (req,res)=>{
         //     return res.status(409).json({ success: false, message: 'Email already exists' });
         // }
         const agentassigned = "";
-        const EnquiryNew = new EnquiryModel({ name, phone, travelernumber,leavingFrom,goingTo,additionalDetails,agentassigned });
+        const boughtby ="";
+        const EnquiryNew = new EnquiryModel({ name, phone, travelernumber,leavingFrom,goingTo,additionalDetails,agentassigned,boughtby });
         // user.password = await bcrypt.hash(password, 10);
         await EnquiryNew.save();
         res.status(201).json({ success: true, message: "Enquiry Submitted" });

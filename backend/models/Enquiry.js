@@ -28,7 +28,12 @@ const EnquirySchema = new Schema({
     },
     agentassigned:{
         type: [String], // or [Schema.Types.ObjectId] if referencing another model
-  default: [],
+        default: [],
+        required:true,
+    },
+    boughtby:{
+        type: [String], // or [Schema.Types.ObjectId] if referencing another model
+        default: [],
         required:true,
     },
     submittedAt: {
