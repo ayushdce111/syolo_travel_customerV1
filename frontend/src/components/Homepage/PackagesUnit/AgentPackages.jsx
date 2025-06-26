@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import axios from "axios";
+import API from '../../../axios.jsx';
 
 function useAgentPackages() {
     const [AgentPackagesData, setAgentPackagesData] = useState([]);
 
     const fetchAgentPackages = async () => {
         try {
-            const data = await axios.get('http://localhost:5000/api/getAgentPackages');
+            const data = await API.get('/api/getAgentPackages');
             setAgentPackagesData(data.data);
         } catch (error) {
             console.log(error);

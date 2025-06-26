@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import API from '../../apiConfig';
+import API from '../../axios.jsx';
 import {ToastContainer} from "react-toastify";
 import { handleError,handleSuccess } from '../Utils';
 
@@ -109,7 +109,7 @@ const EnquiryForm = () => {
       // Simulate form submission (replace with actual backend call)
     //   alert(`Form submitted successfully!\nName: ${formData.name}\nPhone: ${formData.phone}\additionalDetails: ${formData.additionalDetails}`);
     try{
-          const res = await API.post("customer/enquirydata",formData);
+          const res = await API.post("/customer/enquirydata",formData);
           const resJson = await res.data;
           console.log(resJson,"<----------------------------responsone enquiry");
           handleSuccess(resJson.message);

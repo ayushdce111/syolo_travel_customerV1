@@ -3,8 +3,8 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import {ToastContainer} from "react-toastify";
 import { handleError,handleSuccess } from './Utils';
-import axios from "axios";
-import API from '../apiConfig';
+// import axios from "axios";
+import API from '../axios.jsx';
 
 function Signup() {
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ function Signup() {
 
     }
     try{
-      const res = await API.post("http://localhost:8000/auth/signup",formData);
+      const res = await API.post("/auth/signup",formData);
       const resJson = await res.data;
       // console.log(resJson,"<----------------------------responsone signup");
       // console.log(resJson,"<----------------resposne LOCAL");

@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import axios from "axios";
+import API from '../../../axios.jsx';
 
 function useAdminPackages() {
     const [AdminPackagesData, setAdminPackagesData] = useState([]);
 
     const fetchAdminPackages = async () => {
         try {
-            const data = await axios.get('http://localhost:5000/api/getAdminPackages');
+            const data = await API.get('/api/getAdminPackages');
             setAdminPackagesData(data.data);
         } catch (error) {
             console.log(error);
