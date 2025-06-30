@@ -58,9 +58,19 @@ const SliderUnitInternational = () => {
 
   return (
     <>
-<h1 className='text-4xl'>International</h1>
+    <div className='text-center my-4'>
+        <h1 className='text-4xl font-bold'>Our <span className='text-red-500 '>International</span> Tours</h1>
+    </div>
+    <div className='w-[85%] mx-auto text-center my-4'>
+      <p>Syolo Travel specializes in crafting unforgettable international travel experiences, 
+        allowing you to explore the world’s most iconic destinations with ease and comfort. 
+        Whether you’re dreaming of a romantic European getaway, an adventurous African safari, 
+        or a cultural tour of Asia, Syolo Travel ensures a seamless and personalized journey tailored to your preferences.</p>
+    </div>
+    
 
-         <div style={{ width: '90%', margin: '0 auto', position:"relative" }} className=''>
+
+         <div style={{ width: '90%', margin: '0 auto', position:"relative" }} className='my-4'>
            <Slider {...settings}>
            {internationalCategory?.map((Data, index) => {
               return (

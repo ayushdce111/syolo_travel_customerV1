@@ -7,7 +7,9 @@ import EnquiryForm from "./EnquiryForm";
 // import SliderUnit from "./Packages/SliderUnit.jsx";
 // import PackagesHome from './PackagesUnit/PackagesHome.jsx';
 import SliderUnitInternational from "./SliderUnitInternational"
-import SliderUnitDomestic from "./SliderUnitDomestic"
+import SliderUnitDomestic from "./SliderUnitDomestic";
+import WhyChoose from "./WhyChoose.jsx"
+
 SliderUnitDomestic
 
 const Homepage = () => {
@@ -21,6 +23,8 @@ const Homepage = () => {
         {/* <AdminPackages/> */}
         <EnquiryForm/>
         {/* <AgentPackages/> */}
+        <WhyChoose/>
+        
         
         
     </>

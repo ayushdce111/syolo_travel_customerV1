@@ -58,9 +58,18 @@ const SliderUnitDomestic = () => {
 
   return (
     <>
-<h1 className='text-4xl'>Domestic</h1>
+<div className='text-center my-4'>
+        <h1 className='text-4xl font-bold'>Our <span className='text-red-500 '>Domestic</span> Tours</h1>
+    </div>
+    <div className='w-[85%] mx-auto text-center my-4'>
+      <p>Syolo Travel offers an exciting range of domestic tours designed to help you explore 
+        the beauty, culture, and diversity of your own country. Whether you're looking for a relaxing getaway, 
+        an adventurous trek, or a cultural immersion, Syolo Travel curates personalized and hassle-free travel 
+        experiences to suit your preferences.
+      </p>
+    </div>
 
-         <div style={{ width: '90%', margin: '0 auto', position:"relative" }} className=''>
+         <div style={{ width: '90%', margin: '0 auto', position:"relative" }} className='my-4'>
            <Slider {...settings}>
            {internationalCategory?.map((Data, index) => {
               return (
