@@ -58,8 +58,9 @@ const SliderUnitInternational = () => {
 
   return (
     <>
+    <div className='py-20'>
     <div className='text-center my-4'>
-        <h1 className='text-4xl font-bold'>Our <span className='text-red-500 '>International</span> Tours</h1>
+        <h1 className='text-4xl font-bold'>Our <span className='text-[#0D3F63] '>International</span> Tours</h1>
     </div>
     <div className='w-[85%] mx-auto text-center my-4'>
       <p>Syolo Travel specializes in crafting unforgettable international travel experiences, 
@@ -102,6 +103,7 @@ const SliderUnitInternational = () => {
               );
            })}
            </Slider>
+      </div>
       </div>
     </>
   )

@@ -58,8 +58,9 @@ const SliderUnitDomestic = () => {
 
   return (
     <>
+    <div className='pb-20'>
 <div className='text-center my-4'>
-        <h1 className='text-4xl font-bold'>Our <span className='text-red-500 '>Domestic</span> Tours</h1>
+        <h1 className='text-4xl font-bold'>Our <span className='text-[#0D3F63] '>Domestic</span> Tours</h1>
     </div>
     <div className='w-[85%] mx-auto text-center my-4'>
       <p>Syolo Travel offers an exciting range of domestic tours designed to help you explore 
@@ -101,6 +102,7 @@ const SliderUnitDomestic = () => {
               );
            })}
            </Slider>
+      </div>
       </div>
     </>
   )

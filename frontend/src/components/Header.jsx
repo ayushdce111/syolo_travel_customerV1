@@ -12,7 +12,7 @@ const Header = ({HeaderProps}) => {
     // console.log(JSON.parse(userDataVar).name,"<---------userDataVar");
   return (
     <>
-        <div className="flex flex-col md:flex-row md:px-25 px-2 py-2  justify-between items-center  gap-6">
+        <div className="flex flex-col md:flex-row md:px-25 px-2 py-2  justify-between items-center  gap-6 bg-white/60">
             <div className='shrink-0 w-full md:w-auto flex items-center justify-between '>
                 <img src={logo} className='w-22'/>
                 <div className='text-center md:hidden'>

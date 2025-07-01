@@ -141,13 +141,18 @@ const EnquiryForm = () => {
   };
 
   return (
-    <section className="bg-gray-100 py-12">
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Enquiry Form</h2>
-        <form onSubmit={handleSubmit} className="space-y-6">
+    <section className="bg-gray-500/20 py-12 flex gap-5 justify-around">
+      <div className=''>
+        <h1 className='text-5xl text-[#0D3F63] font-bold tracking-wide'>Plan Your Trip</h1>
+        <p className='text-2xl text-[#0D3F63] tracking-wide'>Submit Your Details</p>
+        <img src='./images/contact_form_banner.png'/>
+      </div>
+      <div className="grid grid-cols-1 place-items-center px-4 sm:px-6 lg:px-8">
+        {/* <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Enquiry Form</h2> */}
+        <form onSubmit={handleSubmit} className="space-y-5">
           {/* Name Field */}
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+            <label htmlFor="name" className="block text-sm font-medium text-[#0D3F63]">Name</label>
             <input
               type="text"
               id="name"
@@ -155,7 +160,7 @@ const EnquiryForm = () => {
               value={formData.name}
               onChange={handleInputChange}
               required
-              className={`mt-1 block w-full px-3 py-2 border ${errors.name ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
+              className={`mt-1 block w-full px-3 py-2 border-2 ${errors.name ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-0.5 focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
               placeholder="Enter your name"
             />
             {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
@@ -163,7 +168,7 @@ const EnquiryForm = () => {
 
           {/* Phone Number Field */}
           <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone Number</label>
+            <label htmlFor="phone" className="block text-sm font-medium text-[#0D3F63]">Phone Number</label>
             <input
               type="tel"
               id="phone"
@@ -171,14 +176,14 @@ const EnquiryForm = () => {
               value={formData.phone}
               onChange={handleInputChange}
               required
-              className={`mt-1 block w-full px-3 py-2 border ${errors.phone ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
+              className={`mt-1 block w-full px-3 py-2 border-2 ${errors.phone ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-0.5 focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
               placeholder="Enter your phone number"
             />
             {errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone}</p>}
           </div>
-          <div className='flex gap-3'>
+          <div className='flex gap-2 justify-between'>
               <div>
-                  <label htmlFor="travelernumber" className="block text-sm font-medium text-gray-700">Number Of Traveler</label>
+                  <label htmlFor="travelernumber" className="block text-sm font-medium text-[#0D3F63]">Number Of Traveler</label>
                   <input
                     type="text"
                     id="travelernumber"
@@ -186,13 +191,13 @@ const EnquiryForm = () => {
                     value={formData.travelernumber}
                     onChange={handleInputChange}
                     required
-                    className={`mt-1 block w-full px-3 py-2 border ${errors.travelernumber ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
+                    className={`mt-1 block w-full px-3 py-2 border-2 ${errors.travelernumber ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
                     placeholder="Enter number of travelers"
                   />
                   {errors.travelernumber && <p className="mt-1 text-sm text-red-600">{errors.travelernumber}</p>}
               </div>
               <div>
-                  <label htmlFor="leavingFrom" className="block text-sm font-medium text-gray-700">Leaving From</label>
+                  <label htmlFor="leavingFrom" className="block text-sm font-medium text-[#0D3F63]">Leaving From</label>
                   <input
                     type="text"
                     id="leavingFrom"
@@ -200,13 +205,13 @@ const EnquiryForm = () => {
                     value={formData.leavingFrom}
                     onChange={handleInputChange}
                     required
-                    className={`mt-1 block w-full px-3 py-2 border ${errors.leavingFrom ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
+                    className={`mt-1 block w-full px-3 py-2 border-2 ${errors.leavingFrom ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
                     placeholder="Enter location leaving From"
                   />
                   {errors.leavingFrom && <p className="mt-1 text-sm text-red-600">{errors.leavingFrom}</p>}
               </div>
               <div>
-                  <label htmlFor="goingTo" className="block text-sm font-medium text-gray-700">Going To</label>
+                  <label htmlFor="goingTo" className="block text-sm font-medium text-[#0D3F63]">Going To</label>
                   <input
                     type="text"
                     id="goingTo"
@@ -214,7 +219,7 @@ const EnquiryForm = () => {
                     value={formData.goingTo}
                     onChange={handleInputChange}
                     required
-                    className={`mt-1 block w-full px-3 py-2 border ${errors.goingTo ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
+                    className={`mt-1 block w-full px-3 py-2 border-2 ${errors.goingTo ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
                     placeholder="Enter location leaving From"
                   />
                   {errors.goingTo && <p className="mt-1 text-sm text-red-600">{errors.goingTo}</p>}
@@ -223,7 +228,7 @@ const EnquiryForm = () => {
 {/* {console.log(errors.travelernumber,"errors.travelernumbererrors.travelernumber")} */}
           {/* additionalDetails Field */}
           <div>
-            <label htmlFor="additionalDetails" className="block text-sm font-medium text-gray-700">Additional Details</label>
+            <label htmlFor="additionalDetails" className="block text-sm font-medium text-[#0D3F63]">Additional Details</label>
             <textarea
               id="additionalDetails"
               name="additionalDetails"
@@ -231,7 +236,7 @@ const EnquiryForm = () => {
               value={formData.additionalDetails}
               onChange={handleInputChange}
               required
-              className={`mt-1 block w-full px-3 py-2 border ${errors.additionalDetails ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
+              className={`mt-1 block w-full px-3 py-2 border-2 ${errors.additionalDetails ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
               placeholder="Mention Additional Details "
             ></textarea>
             {errors.additionalDetails && <p className="mt-1 text-sm text-red-600">{errors.additionalDetails}</p>}
@@ -241,7 +246,7 @@ const EnquiryForm = () => {
           <div className="text-center">
             <button
               type="submit"
-              className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-[#0D3F63] hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
               Submit Enquiry
             </button>

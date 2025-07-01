@@ -9,6 +9,9 @@ import EnquiryForm from "./EnquiryForm";
 import SliderUnitInternational from "./SliderUnitInternational"
 import SliderUnitDomestic from "./SliderUnitDomestic";
 import WhyChoose from "./WhyChoose.jsx"
+import SearchBanner from './SearchBanner.jsx';
+import Footer from './Footer.jsx';
+import Counter from './Counter.jsx';
 
 SliderUnitDomestic
 
@@ -17,13 +20,17 @@ const Homepage = () => {
     <>
     {/* <AllPackages/> */}
 {/* <SliderUnit/> */}
+{/* <Banner/> */}
+<SearchBanner/>
 <SliderUnitInternational/>
 <SliderUnitDomestic/>
-        <Banner/>
+        
         {/* <AdminPackages/> */}
         <EnquiryForm/>
+        <Counter/>
         {/* <AgentPackages/> */}
         <WhyChoose/>
+        <Footer/>
         
         
         
