@@ -9,7 +9,7 @@ const Topheader = () => {
   return (
     <>
         <div className='sm:max-flex-col md:flex justify-between bg-[#0D3F63] text-white sm:px-3 md:px-30 py-2.5 relative'>
-            <div className='sm:max-flex-col md:flex gap-6' >
+            <div className='flex md:flex gap-6' >
             <div className='flex justify-center items-center gap-3'>
                 <IoIosCall size={20}/>
                 <p>+91 9999999999</p>

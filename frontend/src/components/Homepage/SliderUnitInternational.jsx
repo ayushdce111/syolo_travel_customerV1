@@ -58,7 +58,7 @@ const SliderUnitInternational = () => {
 
   return (
     <>
-    <div className='py-20'>
+    <div className='py-10 md:py-20'>
     <div className='text-center my-4'>
         <h1 className='text-4xl font-bold'>Our <span className='text-[#0D3F63] '>International</span> Tours</h1>
     </div>

@@ -70,11 +70,12 @@ const Footer = () => {
     <footer>
       <div style={footerStyle} className='bg-gray-300/50'>
         {/* Column 1: Logo and Company Info */}
-        <div style={columnStyle}>
+        <div style={columnStyle} className=''>
           <img
             src="./images/logo.png"
             alt="Company Logo"
             style={logoStyle}
+            className=''
           />
           
         </div>
@@ -117,7 +118,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <div style={copyrightStyle}>
-        © {new Date().getFullYear()} Wanderly Travel Co. All rights reserved.
+        © {new Date().getFullYear()} Syolo Travel Co. All rights reserved.
       </div>
     </footer>
   );

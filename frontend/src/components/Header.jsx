@@ -20,10 +20,11 @@ const Header = ({HeaderProps}) => {
                 </div>
             </div>
             <div className='flex flex-col-reverse gap-2 sm:flex-col md:flex-row md:items-center sm:gap-6'>
-                <div className='text-center'>
+                
+                <div className='text-center flex gap-4'>
+                    <div className='text-center'>
                     <span className='inline-block px-5 py-3 bg-[#0D3F63] rounded-2xl text-white hover:bg-[#FE9901] hover:text-[#0D3F63] cursor-pointer'>Travel Agent? Join Us</span>
                 </div>
-                <div className='text-center'>
                     {isUserActive==="true" ?(
                         <>
                         {/* // console.log(isUserActive,"isUserActive") */}

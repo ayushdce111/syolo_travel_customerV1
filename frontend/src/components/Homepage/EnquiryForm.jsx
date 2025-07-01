@@ -141,15 +141,15 @@ const EnquiryForm = () => {
   };
 
   return (
-    <section className="bg-gray-500/20 py-12 flex gap-5 justify-around">
-      <div className=''>
+    <section className="bg-gray-500/20 py-12 flex flex-col md:flex-row gap-5 justify-around">
+      <div className='px-2'>
         <h1 className='text-5xl text-[#0D3F63] font-bold tracking-wide'>Plan Your Trip</h1>
         <p className='text-2xl text-[#0D3F63] tracking-wide'>Submit Your Details</p>
         <img src='./images/contact_form_banner.png'/>
       </div>
       <div className="grid grid-cols-1 place-items-center px-4 sm:px-6 lg:px-8">
         {/* <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Enquiry Form</h2> */}
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-5 w-full">
           {/* Name Field */}
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-[#0D3F63]">Name</label>
@@ -181,7 +181,7 @@ const EnquiryForm = () => {
             />
             {errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone}</p>}
           </div>
-          <div className='flex gap-2 justify-between'>
+          <div className='flex flex-col md:flex-row gap-2 justify-between'>
               <div>
                   <label htmlFor="travelernumber" className="block text-sm font-medium text-[#0D3F63]">Number Of Traveler</label>
                   <input

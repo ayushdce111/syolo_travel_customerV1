@@ -56,7 +56,7 @@ export const NextArrowSliderUnit = (props) => {
       style={{
         position: 'absolute',
         // right: '10px',
-        right:'-2rem',
+        right:'0rem',
         top: '40%',
         transform: 'translateY(-50%)',
         zIndex: 1,
@@ -65,7 +65,7 @@ export const NextArrowSliderUnit = (props) => {
         fontSize: '24px',
       }}
     >
-<FaCircleArrowRight size={30} color="#000"/>
+<FaCircleArrowRight size={30} color="#fff"/>
     </div>
   );
 };
@@ -77,7 +77,7 @@ export const PrevArrowSliderUnit = (props) => {
       onClick={onClick}
       style={{
         position: 'absolute',
-        left: '-2rem',
+        left: '0rem',
         top: '40%',
         transform: 'translateY(-50%)',
         zIndex: 1,
@@ -86,7 +86,7 @@ export const PrevArrowSliderUnit = (props) => {
         fontSize: '24px',
       }}
     >
-            <FaCircleArrowLeft size={30} color="#000"/>
+            <FaCircleArrowLeft size={30} color="#fff"/>
     </div>
   );
 };

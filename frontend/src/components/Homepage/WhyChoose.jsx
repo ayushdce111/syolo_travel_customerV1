@@ -13,7 +13,7 @@ import { CiGlobe } from "react-icons/ci";
 const WhyChoose = () => {
   return (
     <>
-        <div className='grid grid-cols-2 py-12 px-5'>
+        <div className='grid grid-cols-1 md:grid-cols-2 py-12 px-5 '>
           <div className='grid place-items-center'>
             <img src='./images/whyBanner.png'/>
           </div>
