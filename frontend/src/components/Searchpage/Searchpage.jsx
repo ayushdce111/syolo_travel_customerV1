@@ -28,7 +28,7 @@ const initialFilters = [
 ];
 
 
-const ITEMS_PER_PAGE = 3;
+const ITEMS_PER_PAGE = 5;
 
 const SearchPage = () => {
   const CompletePackagesData = usePackagesHome();

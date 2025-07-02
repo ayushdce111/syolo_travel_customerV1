@@ -3,13 +3,13 @@ import React from 'react';
 
 const SearchResults = ({ results }) => {
   return (
-    <div className="p-4 flex gap-3">
+    <div className="p-4 grid grid-cols-5 gap-3">
       {results.length === 0 ? (
         <p>No results found.</p>
       ) : (
         results.map((item, index) => (
           
-          <div key={index} className="border p-2">
+          <div key={index} className="shadow-sm shadow-[#000] rounded-md p-2">
             <div className='w-[12vw] h-[20vh] bg-gray-500'>
                 <img src='#' />
             </div>
