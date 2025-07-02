@@ -68,7 +68,7 @@ const Footer = () => {
 
   return (
     <footer>
-      <div style={footerStyle} className='bg-gray-300/50'>
+      <div style={footerStyle} className='bg-gray-500/20'>
         {/* Column 1: Logo and Company Info */}
         <div style={columnStyle} className=''>
           <img

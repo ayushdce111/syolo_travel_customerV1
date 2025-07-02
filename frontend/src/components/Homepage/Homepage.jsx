@@ -9,7 +9,7 @@ import EnquiryForm from "./EnquiryForm";
 import SliderUnitInternational from "./SliderUnitInternational"
 import SliderUnitDomestic from "./SliderUnitDomestic";
 import WhyChoose from "./WhyChoose.jsx"
-import SearchBanner from './SearchBanner.jsx';
+import SearchBanner from '../Searchpage/SearchBanner.jsx';
 import Footer from './Footer.jsx';
 import Counter from './Counter.jsx';
 

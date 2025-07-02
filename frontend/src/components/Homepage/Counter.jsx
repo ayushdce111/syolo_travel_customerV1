@@ -49,7 +49,7 @@ const Counter = () => {
     justifyContent: 'space-around',
     flexWrap: 'wrap',
     padding: '20px',
-    background: '#f9f9f9',
+    // background: '#f9f9f9',
   };
 
   const statStyle = {
@@ -71,7 +71,7 @@ const Counter = () => {
   };
 
   return (
-    <div style={containerStyle}>
+    <div style={containerStyle} className='bg-gray-500/20'>
       {statsData.map((stat, index) => (
         <div key={index} style={statStyle}>
           <div style={numberStyle}>{stat.format(Math.floor(counts[index]))}</div>

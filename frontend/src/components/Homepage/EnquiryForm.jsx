@@ -141,7 +141,7 @@ const EnquiryForm = () => {
   };
 
   return (
-    <section className="bg-gray-500/20 py-12 flex flex-col md:flex-row gap-5 justify-around">
+    <section className=" py-12 flex flex-col md:flex-row gap-5 justify-around">
       <div className='px-2'>
         <h1 className='text-5xl text-[#0D3F63] font-bold tracking-wide'>Plan Your Trip</h1>
         <p className='text-2xl text-[#0D3F63] tracking-wide'>Submit Your Details</p>

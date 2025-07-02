@@ -1,12 +1,18 @@
 import React from 'react';
 import { FaLocationDot } from "react-icons/fa6";
 import { FaCalendarAlt } from "react-icons/fa";
-
+import { Link } from 'react-router-dom';
 
 
 const SearchBanner = () => {
+  
+  const currentPage = window.location.pathname;
+  const activeExploreLink = currentPage==="/" ? "/searchpage/" : "";
+
+  console.log(currentPage,"<========currentPage")
+
   return (
-    <div className='h-[45vh] md:h-[80vh] grid grid-cols-1 place-items-center bg-[url(./images/67.jpg)] '>
+    <div className='h-[45vh] md:h-[80vh] grid grid-cols-1 place-items-center  ' style={{background:'linear-gradient(0deg, rgb(106 106 106 / 68%), rgb(255 255 255 / 13%)), url(./images/search_banner.png)'}}>
        
         
             <div className='mx-auto w-[95%] h-[80%] flex flex-col gap-3 justify-center'>
@@ -22,7 +28,7 @@ const SearchBanner = () => {
                     </div>
                     
                     
-                    <button className='text-white bg-[#0D3F63] px-3 self-stretch text-2xl rounded'>Explore</button>
+                    <Link to={activeExploreLink} className='text-white bg-[#0D3F63] px-3 py-2 text-2xl rounded'>Explore</Link>
                     
                 </form>
             </div>

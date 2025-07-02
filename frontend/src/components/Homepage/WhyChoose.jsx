@@ -13,10 +13,8 @@ import { CiGlobe } from "react-icons/ci";
 const WhyChoose = () => {
   return (
     <>
-        <div className='grid grid-cols-1 md:grid-cols-2 py-12 px-5 '>
-          <div className='grid place-items-center'>
-            <img src='./images/whyBanner.png'/>
-          </div>
+        <div className='grid grid-cols-1 md:grid-cols-2 py-12 px-5'>
+          
           <div>
             <p className='text-3xl text-[#0D3F63] font-bold'>Why Choose Syolo Travel ?</p>
             <p className='mt-2 text-[#0D3F63]'>Syolo Travel offers personalized, affordable, and hassle-free travel experiences. 
@@ -69,7 +67,9 @@ const WhyChoose = () => {
               </div>
               
           </div>
-
+<div className='grid place-items-center'>
+            <img src='./images/whyBanner.png'/>
+          </div>
         </div>
     
     </>

@@ -1,7 +1,8 @@
 html{
     /* background-image: url; */
     min-height:100%;
-      background:linear-gradient(0deg, rgba(255, 255, 255, 0.658), rgba(255, 255, 255, 0.3)), url(../public/images/newBackground.jpg);
+      background:linear-gradient(0deg, rgba(255, 255, 255, 0.658), rgba(255, 255, 255, 0.3)), url(./images/19366.jpg);
       background-size:contain;
+      /* background-size: contain; */
       /* background-repeat: no-repeat; */
 }
