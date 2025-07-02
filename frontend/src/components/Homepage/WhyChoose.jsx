@@ -13,7 +13,7 @@ import { CiGlobe } from "react-icons/ci";
 const WhyChoose = () => {
   return (
     <>
-        <div className='grid grid-cols-1 md:grid-cols-2 py-12 px-5'>
+        <div className='grid grid-cols-1 md:grid-cols-2 py-12 px-5 pl-8'>
           
           <div>
             <p className='text-3xl text-[#0D3F63] font-bold'>Why Choose Syolo Travel ?</p>
