@@ -46,6 +46,12 @@ const AgentTravelPackagesSchema = new Schema({
   package_status:{
         type:String,
         required:true,
+  },
+  image_url: {
+    type:String,
+  },
+  public_id:{
+    type:String,
   }
 })
 

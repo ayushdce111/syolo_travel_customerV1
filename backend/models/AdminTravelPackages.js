@@ -42,6 +42,12 @@ const AdminTravelPackagesSchema = new Schema({
     submittedAt: {
     type: Date,
     default: Date.now,
+  },
+    image_url: {
+    type:String,
+  },
+  public_id:{
+    type:String,
   }
 })
 

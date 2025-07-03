@@ -6,7 +6,7 @@ import bannerdemo from "../../assets/images/bannerdemo.png";
 import usePackagesHome from "./PackagesUnit/PackagesHome.jsx";
 
 const settings = {
-    dots: true,
+    dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 5,
@@ -77,12 +77,12 @@ const SliderUnitInternational = () => {
               return (
                 <div key={index} className='pr-2 group'>
                   <div className='relative h-[35vh] md:h-[55vh] overflow-hidden rounded-xl'>
-                    <img src={bannerdemo} alt={`Slide ${index + 1}`} className='rounded-xl transition-all duration-700 ease-in-out group-hover:scale-125' style={{width:"100%",height:"100%",objectFit:"cover",position:"relative"}}/>
+                    <img src={Data.image_url} alt={`Slide ${index + 1}`} className='rounded-xl transition-all duration-700 ease-in-out group-hover:scale-125' style={{width:"100%",height:"100%",objectFit:"cover",position:"relative"}}/>
                     <div className='absolute top-2 right-2 bg-white/50 px-1 rounded-md'>
-                      <p className='text-sm'>4N/5D</p>
+                      <p className='text-sm'>{Data.duration}</p>
                     </div>
                     <div className='absolute bottom-2 left-2 bg-white/50 px-1 rounded-md text-sm'>
-                      <p>Delhi, India</p>
+                      <p>{Data.destinations}</p>
                     </div>
                     <div className='absolute top-0 right-[120%] bottom-0 transition-all duration-700 ease-in-out group-hover:right-[30%] grid place-items-center'>
                       <button className='px-2 py-1 text-white bg-amber-600 rounded-2xl text-nowrap cursor-pointer'>Know More</button>
@@ -90,13 +90,13 @@ const SliderUnitInternational = () => {
                   </div>
                   <div className='px-2'>
                     <div className='text-blue-600 font-bold mt-2 mb-1'>
-                      <p>Title- {Data.title || "Sample title"}</p>
+                      <p>Title- {Data.title }</p>
                     </div>
                     <div className='mb-1'>
                       <p>Price Starts From</p>
                     </div>
                     <div className='font-semibold'>
-                      <p>Rs. 1,000 <span className='text-xs'>per person</span></p>
+                      <p>Rs. {Data.prices} <span className='text-xs'>per person</span></p>
                     </div>
                   </div>
                 </div>

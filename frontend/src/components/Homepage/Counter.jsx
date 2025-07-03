@@ -48,7 +48,7 @@ const Counter = () => {
     display: 'flex',
     justifyContent: 'space-around',
     flexWrap: 'wrap',
-    padding: '20px',
+    padding: '3rem 20px',
     // background: '#f9f9f9',
   };
 

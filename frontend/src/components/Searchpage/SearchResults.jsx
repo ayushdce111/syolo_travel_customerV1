@@ -10,8 +10,8 @@ const SearchResults = ({ results }) => {
         results.map((item, index) => (
           
           <div key={index} className="shadow-sm shadow-[#000] rounded-md p-2">
-            <div className='w-[12vw] h-[20vh] bg-gray-500'>
-                <img src='#' />
+            <div className=' h-[20vh] bg-gray-500 rounded-md'>
+                <img src={item.image_url} className='rounded-md w-full h-full '/>
             </div>
             <h3 className="font-bold">Title - {item.title}</h3>
             <p className="text-sm text-gray-600">description - {item.description}</p>
