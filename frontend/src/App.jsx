@@ -17,6 +17,7 @@ import Topheader from './components/TopHeader';
 import Header from './components/Header';
 import {ToastContainer} from "react-toastify";
 import Searchpage from './components/Searchpage/Searchpage';
+import PackagePage from './components/Homepage/PackagePage';
 // import AdminPackages from './components/Homepage/AdminPackages';
 // import { handleError,handleSuccess } from '../Utils';
 
@@ -50,6 +51,7 @@ function App() {
       <Route path='/Login' element={<Login/>} />
       <Route path='/Home' element={<PrivateRoute element={<Home/>}/>} />
       <Route path='/searchpage' element={<Searchpage/>} />
+      <Route path='/packagepage/:id' element={<PackagePage/>} />
 
     </Routes>
       

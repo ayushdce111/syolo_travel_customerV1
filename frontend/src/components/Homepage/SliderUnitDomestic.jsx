@@ -4,6 +4,7 @@ import Slider from 'react-slick';
 import {NextArrowSliderUnit,PrevArrowSliderUnit} from "./BannerArrows.jsx";
 import bannerdemo from "../../assets/images/bannerdemo.png";
 import usePackagesHome from "./PackagesUnit/PackagesHome.jsx";
+import { Link} from 'react-router-dom';
 
 const settings = {
     dots: false,
@@ -74,7 +75,7 @@ const SliderUnitDomestic = () => {
            <Slider {...settings}>
            {internationalCategory?.map((Data, index) => {
               return (
-                <div key={index} className='pr-2 group'>
+                 <Link to={`/packagepage/${Data._id}`} key={index} className='pr-2 group'>
                   <div className='relative h-[35vh] md:h-[55vh] overflow-hidden rounded-xl'>
                     <img src={Data.image_url} alt={`Slide ${index + 1}`} className='rounded-xl transition-all duration-700 ease-in-out group-hover:scale-125' style={{width:"100%",height:"100%",objectFit:"cover",position:"relative"}}/>
                     <div className='absolute top-2 right-2 bg-white/50 px-1 rounded-md'>
@@ -98,7 +99,7 @@ const SliderUnitDomestic = () => {
                       <p>Rs. {Data.prices} <span className='text-xs'>per person</span></p>
                     </div>
                   </div>
-                </div>
+                </Link>
               );
            })}
            </Slider>

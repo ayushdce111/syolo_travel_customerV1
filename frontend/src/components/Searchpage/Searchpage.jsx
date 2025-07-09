@@ -25,6 +25,13 @@ const initialFilters = [
       { label: '50 - 100', value: '50-100', checked: false },
     ],
   },
+  {
+    label: 'Duration',
+    options: [
+      { label: '1 - 4 (Nights)', value: '1-4', checked: false },
+      { label: '4 - 5 (Nights)', value: '4-5', checked: false },
+    ],
+  },
 ];
 
 
@@ -74,8 +81,16 @@ const SearchPage = () => {
             })
           : true;
           // console.log(activeFilters.price,"=====activeFilters.price")
+          const matchesDuration =
+        activeFilters.duration?.length > 0
+          ? activeFilters.duration.some((range) => {
+              const [min, max] = range.split('-').map(Number);
+              console.log(item.duration,"===item.price",item.duration >= min && item.duration <= max)
+              return item.duration >= min && item.duration <= max;
+            })
+          : true;
 
-      return matchesSearch && matchesCategory && matchesPrice;
+      return matchesSearch && matchesCategory && matchesPrice && matchesDuration;
     });
 
     // Sort results
